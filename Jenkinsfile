@@ -3,33 +3,26 @@ pipeline{
     stages {
         stage('Clone Repository'){
             steps{
-                git branch: 'master',
-                    url: 'https://github.com/mohjavedali/testing-jekinsFile.git'
+                git branch: 'main',
+                    url: 'https://github.com/MIRTAHAALI/express_server_for_flutter_app_testing.git'
             }
         }
         
-    stage('Install Dependencies') {
-        steps {
-            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                sh 'npm install'
-            }
-          }
-        }
-        // stage('Install pm2'){
-        //     steps {
-        //         bat 'npm install pm2 -g'
-        //     }
-        // }
-        stage('Run the App') {
+        stage('Install Dependencies'){
             steps {
-                sh 'npm start &'
-                sleep 5
+                bat 'npm install'
             }
         }
-        // stage('Deploy'){
-        //     steps {
-        //         sh "npm start"
-        //     }
-        // }
+        stage('Install pm2'){
+            steps {
+                sh 'npm install pm2 -g'
+            }
+        }
+        
+        stage('Deploy'){
+            steps {
+                sh 'pm2 startOrRestart pm2.config.json'
+            }
+        }
     }
 }
