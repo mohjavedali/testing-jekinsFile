@@ -26,5 +26,10 @@ pipeline{
                 sleep 5
             }
         }
+        stage('Cleanup') {
+            steps {
+                sh 'taskkill /F /IM node.exe'
+            }
+        }
     }
 }
