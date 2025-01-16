@@ -15,11 +15,11 @@ pipeline{
                 bat 'npm install'
             }
         }
-         stage('Install pm2'){
-            steps {
-                bat 'npm install pm2 -g'
-            }
-        }
+        // stage('Install pm2'){
+        //     steps {
+        //         bat 'npm install pm2 -g'
+        //     }
+        // }
         
         stage('Deploy'){
             steps {
