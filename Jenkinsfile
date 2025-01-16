@@ -4,8 +4,7 @@ pipeline{
         stage('Clone Repository'){
             steps{
                 git branch: 'master',
-                    url: 'https://github.com/mohjavedali/testing-jekinsFile.git',
-                    credentialsId: 'git-credentials'
+                    url: 'https://github.com/mohjavedali/testing-jekinsFile.git'
             }
         }
         
