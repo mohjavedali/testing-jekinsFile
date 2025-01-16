@@ -1,7 +1,5 @@
 pipeline{
-    agent {
-      label 'PreProd'
-    }
+    agent any
     stages {
         stage('Clone Repository'){
             steps{
