@@ -13,12 +13,14 @@ pipeline{
                 sh 'npm install'
             }
         }
+
         stage('Run the App') {
             steps {
                 sh 'npm start &'
                 sleep 5
             }
         }
+        
         // stage('Install pm2'){
         //     steps {
         //         sh 'npm install pm2 -g'
