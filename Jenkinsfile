@@ -8,29 +8,28 @@ pipeline{
             }
         }
         
-        stage('Install Dependencies'){
-            steps {
+    stage('Install Dependencies') {
+        steps {
+            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                 sh 'npm install'
             }
+          }
         }
-
+        // stage('Install pm2'){
+        //     steps {
+        //         sh 'npm install pm2 -g'
+        //     }
+        // }
         stage('Run the App') {
             steps {
                 sh 'npm start &'
                 sleep 5
             }
         }
-
-        // stage('Install pm2'){
-        //     steps {
-        //         sh 'npm install pm2 -g'
-        //     }
-        // }
-        
-        // stage('Deploy'){
-        //     steps {
-        //         sh 'pm2 startOrRestart pm2.config.json'
-        //     }
-        // }
+        stage('Deploy'){
+            steps {
+                sh "npm start"
+            }
+        }
     }
 }
