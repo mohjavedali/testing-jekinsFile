@@ -1,12 +1,10 @@
 pipeline{
-    agent {
-      label 'PreProd'
-    }
+    agent any
     stages {
         stage('Clone Repository'){
             steps{
-                git branch: 'main',
-                    url: 'https://github.com/MIRTAHAALI/express_server_for_flutter_app_testing.git'
+                git branch: 'master',
+                    url: 'https://github.com/mohjavedali/testing-jekinsFile.git'
             }
         }
         
