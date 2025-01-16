@@ -13,11 +13,11 @@ pipeline{
                 sh 'npm install'
             }
         }
-        stage('Install pm2'){
-            steps {
-                sh 'npm install pm2 -g'
-            }
-        }
+        // stage('Install pm2'){
+        //     steps {
+        //         sh 'npm install pm2 -g'
+        //     }
+        // }
         
         stage('Deploy'){
             steps {
