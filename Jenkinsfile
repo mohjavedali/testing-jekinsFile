@@ -18,11 +18,16 @@ pipeline{
         //         bat 'npm install pm2 -g'
         //     }
         // }
-        
-        stage('Deploy'){
+        stage('Run the App') {
             steps {
-                sh "npm start"
+                sh 'npm start &'
+                sleep 5
             }
         }
+        // stage('Deploy'){
+        //     steps {
+        //         sh "npm start"
+        //     }
+        // }
     }
 }
