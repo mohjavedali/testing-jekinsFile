@@ -17,10 +17,10 @@ const auth = (req, res, next) => {
 	}
 	next();
 }
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
 	res.send('Hello World!');
 })
-app.get('api/testgetrequest', (req, res) => {
+app.get('/api/testgetrequest', (req, res) => {
 	res.send('Hello World!');
 })
 app.get('/testwithheader', auth, (req, res) => {
