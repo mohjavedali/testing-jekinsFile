@@ -8,10 +8,12 @@ pipeline{
             }
         }
         
-        stage('Install Dependencies'){
-            steps {
-                bat 'npm install'
+    stage('Install Dependencies') {
+        steps {
+            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                sh 'npm install'
             }
+          }
         }
         // stage('Install pm2'){
         //     steps {
