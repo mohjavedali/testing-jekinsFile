@@ -3,8 +3,8 @@ pipeline{
     stages {
         stage('Clone Repository'){
             steps{
-                git branch: 'main',
-                    url: 'https://github.com/MIRTAHAALI/express_server_for_flutter_app_testing.git'
+                git branch: 'master',
+                    url: 'https://github.com/mohjavedali/testing-jekinsFile.git'
             }
         }
         
@@ -20,7 +20,7 @@ pipeline{
                 sleep 5
             }
         }
-        
+
         // stage('Install pm2'){
         //     steps {
         //         sh 'npm install pm2 -g'
