@@ -1,6 +1,7 @@
 pipeline{
-    agent any
-    tools {nodejs "CICDTESTING"}
+    agent {
+      label 'PreProd'
+    }
     stages {
         stage('Clone Repository'){
             steps{
