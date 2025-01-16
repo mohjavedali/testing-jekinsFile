@@ -11,7 +11,7 @@ pipeline{
     stage('Install Dependencies') {
         steps {
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                sh 'sudo npm install'
+                sh 'npm install'
             }
           }
         }
@@ -22,7 +22,7 @@ pipeline{
         // }
         stage('Run the App') {
             steps {
-                sh 'sudo npm start &'
+                sh 'npm start &'
                 sleep 5
             }
         }
