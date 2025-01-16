@@ -20,11 +20,11 @@ pipeline{
         //         sh 'npm install pm2 -g'
         //     }
         // }
-        stage('Run the App') {
-            steps {
-                sh 'npm start &'
-                sleep 5
-            }
+    stage('Run the App') {
+        steps {
+            sh 'npm start'
         }
+    }
+
     }
 }
