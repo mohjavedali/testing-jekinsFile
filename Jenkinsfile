@@ -15,7 +15,6 @@ pipeline{
             }
           }
     }
-
     // stage('Install pm2'){
     //     steps {
     //         sh 'sudo npm install pm2 -g'
@@ -28,9 +27,11 @@ pipeline{
     //     }
     // }
 
-        stage('Deploy') {
-            steps {
-                sh 'pm2 restart Backend'
+    stage('Deploy') {
+        steps {
+            sh 'pm2 restart Backend'
+            }
         }
     }
 }
+
