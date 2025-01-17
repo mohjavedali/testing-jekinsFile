@@ -28,15 +28,16 @@ pipeline{
     // }
 
     stage('Restart Server') {
-        steps {
-            try {
-                sh 'pm2 restart Backend'
-            } catch (Exception e) {
-                currentBuild.result = 'FAILED'
-                error("Failed to restart server: ${e.message}")
+            steps {
+                try {
+                    // This is the missing step. You can replace 'pm2 restart Backend' with your actual restart command
+                    sh 'pm2 restart Backend'
+                } catch (Exception e) {
+                    currentBuild.result = 'FAILED'
+                    error("Failed to restart server: ${e.message}")
+                }
             }
         }
-    }
     }
 }
 
