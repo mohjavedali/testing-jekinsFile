@@ -29,7 +29,7 @@ pipeline{
 
     stage('Restart Server') {
         steps {
-            sh 'sudo pm2 restart 0'
+            sh '/var/lib/jenkins/workspace/Node-jenkinsfile/pm2 restart 0'
             }
         }
     }
