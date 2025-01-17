@@ -14,10 +14,10 @@ module.exports = {
                 NODE_ENV: "development", // Environment variables for development
                 PORT: 8000,
             },
-            env_production: {
-                NODE_ENV: "production", // Environment variables for production
-                PORT: 9000,
-            },
+            // env_production: {
+            //     NODE_ENV: "production", // Environment variables for production
+            //     PORT: 9000,
+            // },
         },
     ],
 };
