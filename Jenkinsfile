@@ -27,9 +27,9 @@ pipeline{
     //     }
     // }
 
-    stage('Deploy') {
+    stage('Restart Server') {
         steps {
-            sh 'pm2 restart Backend'
+            sh 'pm2 restart 0'
             }
         }
     }
