@@ -31,7 +31,7 @@ pipeline{
     steps {
         script {
             try {
-                sh 'pm2 reload Backend --update-env'
+                sh 'pm2 restart all'
             } catch (Exception e) {
                 currentBuild.result = 'FAILURE'
                 error("Failed to restart PM2 process: ${e.message}")
