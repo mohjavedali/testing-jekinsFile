@@ -27,10 +27,9 @@ pipeline{
     //     }
     // }
 
-    stage('Restart Server') {
-            steps {
-                try {
-                    // This is the missing step. You can replace 'pm2 restart Backend' with your actual restart command
+   stage('Restart Server') {
+            steps { 
+                try { 
                     sh 'pm2 restart Backend'
                 } catch (Exception e) {
                     currentBuild.result = 'FAILED'
@@ -39,5 +38,6 @@ pipeline{
             }
         }
     }
+
 }
 
