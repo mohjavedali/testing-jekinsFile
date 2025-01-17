@@ -29,7 +29,7 @@ pipeline{
 
     stage('Restart Server') {
         steps {
-            sh 'pm2 start server.js'
+            sh 'pm2 restart server.js'
             }
         }
     }
