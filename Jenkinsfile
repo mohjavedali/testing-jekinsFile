@@ -29,7 +29,7 @@ pipeline{
 
     stage('Restart Server') {
         steps {
-            sh 'pm2 restart 0'
+            sh 'sudo pm2 restart 0'
             }
         }
     }
