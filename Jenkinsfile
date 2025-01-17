@@ -14,17 +14,22 @@ pipeline{
                 sh 'npm install'
             }
           }
-        }
-        // stage('Install pm2'){
-        //     steps {
-        //         sh 'npm install pm2 -g'
-        //     }
-        // }
+    }
+
+    // stage('Install pm2'){
+    //     steps {
+    //         sh 'sudo npm install pm2 -g'
+    //     }
+    // }
+    
     stage('Run the App') {
         steps {
             sh 'npm start'
         }
     }
 
+    stage('Deploy') {
+        steps {
+            sh 'pm2 restart Backend'
     }
 }
