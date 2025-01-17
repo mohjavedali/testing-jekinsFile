@@ -28,18 +28,19 @@ pipeline{
     // }
 
     stage('Restart Server') {
-        steps { 
-            script {
-                try {
-                    sh 'pm2 restart Backend'
-                } catch (Exception e) {
-                    currentBuild.result = 'FAILURE'
-                    error("Failed to restart server: ${e.message}")
-                }
+    steps {
+        script {
+            try {
+                sh 'pm2 reload Backend --update-env'
+            } catch (Exception e) {
+                currentBuild.result = 'FAILURE'
+                error("Failed to restart PM2 process: ${e.message}")
             }
         }
     }
-    
+}
+
+
     }
 
 }
