@@ -23,11 +23,11 @@ pipeline{
     //     }
     // }
     
-    stage('Run the App') {
-        steps {
-            sh 'npm start'
-        }
-    }
+    // stage('Run the App') {
+    //     steps {
+    //         sh 'npm start'
+    //     }
+    // }
 
     stage('Deploy') {
         steps {
