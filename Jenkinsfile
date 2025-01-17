@@ -29,7 +29,11 @@ pipeline{
 
     stage('Restart Server') {
         steps {
-            sh 'pm2 start ecosystem.config.js'
+            try {
+                sh 'pm2 restart Backend'
+            } catch (Exception e) {
+                currentBuild.result = 'FAILED'
+                error("Failed to restart server: ${e.message}")
             }
         }
     }
