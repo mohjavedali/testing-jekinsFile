@@ -27,16 +27,19 @@ pipeline{
     //     }
     // }
 
-   stage('Restart Server') {
-            steps { 
-                try { 
+    stage('Restart Server') {
+        steps { 
+            script {
+                try {
                     sh 'pm2 restart Backend'
                 } catch (Exception e) {
-                    currentBuild.result = 'FAILED'
+                    currentBuild.result = 'FAILURE'
                     error("Failed to restart server: ${e.message}")
                 }
             }
         }
+    }
+    
     }
 
 }
