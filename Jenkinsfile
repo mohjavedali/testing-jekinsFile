@@ -28,14 +28,6 @@ pipeline{
         }
     }
 
-    stage('Install Dependencies') {
-        steps {
-            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                sh 'npm save'
-            }
-          }
-    }
-
     // stage('Restart Server') {
     //     steps {
     //         script {
@@ -49,7 +41,8 @@ pipeline{
     //     }
     // }
 
-    }
+
     }
 
+}
 
