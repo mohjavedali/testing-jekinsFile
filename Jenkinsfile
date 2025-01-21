@@ -20,7 +20,7 @@ pipeline{
             script {
                 try {
                     // sh 'pm2 start -d ecosystem.config.js --env development'
-                    sh 'pm2 restart 0'
+                    sh 'pm2 reload ecosystem.config.js --env=development'
                     // Save the pm2 process list
                     sh 'pm2 save'
                 } catch (error) {
