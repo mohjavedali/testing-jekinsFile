@@ -1,7 +1,7 @@
 module.exports = {
     apps: [{
         name: 'my-app',
-        script: '/var/lib/jenkins/workspace/node-cicd/server.js',
+        script: '/server.js',
         autorestart: true,
         max_memory_restart: '1G',
         env: {
