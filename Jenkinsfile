@@ -23,7 +23,7 @@ pipeline{
     
     stage('Run the App') {
         steps {
-            sh 'npm start'
+            sh 'pm2 start ecosystem.config.js'
         }
     }
 
