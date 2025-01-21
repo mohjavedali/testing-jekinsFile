@@ -1,7 +1,7 @@
 module.exports = {
     apps: [{
         name: 'my-app',
-        script: '/server.js',
+        script: './server.js',
         autorestart: true,
         max_memory_restart: '1G',
         env: {
@@ -15,10 +15,10 @@ module.exports = {
     deploy: {
         development: {
             user: 'ubuntu',
-            host: ['54.144.218.111'],
+            host: ['54.174.89.121'],
             ref: 'origin/master',
             repo: 'https://github.com/mohjavedali/testing-jekinsFile.git',
-            path: '/var/lib/jenkins/workspace/node-cicd',
+            path: '/var/lib/jenkins/workspace/node-cicdjenkins',
             'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js --env development'
         }
     }
