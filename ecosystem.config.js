@@ -1,11 +1,9 @@
 module.exports = {
     apps: [{
         name: 'my-app',
-        script: './server.js', // Path to your compiled JavaScript file
-        // watch: ['./dist'], // Watch for changes in the dist directory
-        // instances: 'max', // Start as many instances as possible
-        autorestart: true, // Automatically restart the app on crash
-        max_memory_restart: '1G', // Restart if the app uses more than 1GB of memory
+        script: './server.js',
+        autorestart: true,
+        max_memory_restart: '1G',
         env: {
             "NODE_ENV": "production"
         },
@@ -24,15 +22,4 @@ module.exports = {
             'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js --env development'
         }
     }
-
-    // deploy: {
-    //     production: {
-    //         user: 'node',
-    //         host: ['212.83.163.1'],
-    //         ref: 'origin/master',
-    //         repo: 'git@github.com:repo.git',
-    //         path: '/var/www/production',
-    //         'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js --env production'
-    //     }
-    // }
 };

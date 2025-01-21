@@ -17,10 +17,16 @@ pipeline{
     }
     
     stage('Run the App') {
-        steps {
-            sh 'pm2 start ecosystem.config.js --env development'
+            steps {
+                script {
+                    try {
+                        sh 'pm2 start ecosystem.config.js --env development' 
+                    } catch (error) {
+                        echo "Error starting app: ${error}"
+                    }
+                }
+            }
         }
-    }
 
     // stage('Restart Server') {
     //     steps {
