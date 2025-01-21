@@ -16,8 +16,8 @@ module.exports = {
 
     deploy: {
         development: {
-            user: 'node',
-            host: ['http://54.144.218.111/'],
+            user: 'ubuntu',
+            host: ['54.144.218.111'],
             ref: 'origin/master',
             repo: 'https://github.com/mohjavedali/testing-jekinsFile.git',
             path: '/var/lib/jenkins/workspace/node-cicd',
