@@ -3,8 +3,7 @@ pipeline{
     stages {
         stage('Clone Repository'){
             steps{
-                git branch: 'master',
-                    url: 'https://github.com/mohjavedali/CI_CD.git'
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mohjavedali/testing-jekinsFile.git']])
             }
         }
         
