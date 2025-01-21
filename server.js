@@ -18,7 +18,7 @@ const auth = (req, res, next) => {
 	next();
 }
 app.get('/api', (req, res) => {
-	res.send('Hello World!!!!!!!whatssssssssssssssssssssssss');
+	res.send('Hello World!!!!!!!ddddddddddddddddddddd');
 })
 app.get('/api/testgetrequest', (req, res) => {
 	res.send('Hello World!');
