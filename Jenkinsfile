@@ -20,7 +20,7 @@ pipeline{
             script {
                 try {
                     // sh 'pm2 start -d ecosystem.config.js --env development'
-                    sh './node_modules/.bin/pm2 start server.js --name myapp'
+                    sh './node_modules/.bin/pm2 pm2 start server.js --name myapp'
                     // Save the pm2 process list
                     sh 'pm2 save'
                 } catch (error) {
