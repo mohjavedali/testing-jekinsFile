@@ -20,8 +20,7 @@ pipeline{
             steps {
                 script {
                     try {
-                        sh 'pm2 start ecosystem.config.js --env development',
-                        sh 'pm2 status my-app'
+                        sh 'pm2 start -d ecosystem.config.js --env development'
                     } catch (error) {
                         echo "Error starting app: ${error}"
                     }
